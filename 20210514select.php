@@ -7,7 +7,7 @@ echo '<pre>';
 
 // https://stackoverflow.com/questions/64894/select-data-from-show-tables-mysql-query
 // $sql = 'SELECT * FROM INFORMATION_SCHEMA.TABLES';
-$sql = 'SELECT * FROM agents';
+$sql = 'SELECT * FROM foods';
 
 
 $res = mysqli_query($mysqli, $sql);
@@ -44,7 +44,11 @@ foreach ($res_interpretado as $indice => $linha) {
   }
 
   $tableHtml .= "<td>";
-  $tableHtml .= "<a href='20210514delete.php?ac=". $linha['AGENT_CODE'] . "'> DELETE </a>";
+  $tableHtml .= "<a href='20210514delete.php?ac=". $linha['ITEM_ID'] . "'> DELETE </a>";
+  $tableHtml .= "</td>";
+
+  $tableHtml .= "<td>";
+  $tableHtml .= "<a href='20210611updateform.php?ITEM_ID=". $linha['ITEM_ID'] . "'> UPDATE </a>";
   $tableHtml .= "</td>";
 
   $tableHtml .= "</tr>";
